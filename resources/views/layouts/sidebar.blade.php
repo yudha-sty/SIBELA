@@ -15,7 +15,7 @@
                             class="hide-menu">Klasifikasi
                         </span></a>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#".
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/kegiatan".
                     aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                         class="hide-menu">Kegiatan
                     </span></a>
