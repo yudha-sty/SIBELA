@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\Kegiatan;
+use App\Models\Modal;
 
-class KegiatanController extends Controller
+class ModalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Kegiatan $kegiatan)
+    public function index(Request $request)
     {
-        $kegiatan = Kegiatan::all();
-        return view('kegiatan/index', compact('kegiatan'));
+        $modal = Modal::all();
+        return view('modal/index', compact('modal'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return view('kegiatan/create');
+        return view('modal/create');
     }
 
     /**
@@ -37,14 +37,7 @@ class KegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-
-            'nama_kegiatan',
-        ]);
-        Kegiatan::create([
-            'nama_kegiatan' => request('nama_kegiatan'),
-        ]);
-        return redirect()->route('kegiatan.index')->with('success', 'Data Berhasil Ditambah');
+        //
     }
 
     /**
@@ -66,8 +59,7 @@ class KegiatanController extends Controller
      */
     public function edit($id)
     {
-        $kegiatan = DB::table('kegiatan')->where('id', $id)->get();
-        return view('kegiatan/edit', ['kegiatan' => $kegiatan]); 
+        //
     }
 
     /**
@@ -77,15 +69,9 @@ class KegiatanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kegiatan $kegiatan)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'id' => 'id',
-            'nama_kegiatan' => 'required',
-        ]);
-            $kegiatan->update($request->all());
-
-            return redirect()->route('kegiatan.index')->with('success', 'Kegiatan updated successfully');
+        //
     }
 
     /**
@@ -94,11 +80,8 @@ class KegiatanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy($id)
     {
-        $kegiatan->delete();
-        return redirect()->route('kegiatan.index')
-                        ->with('success', 'Kegiatan deleted successfully');
+        //
     }
 }
