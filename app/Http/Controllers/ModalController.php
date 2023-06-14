@@ -37,7 +37,21 @@ class ModalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'no_kwmdl',
+            'uraian_modal',
+            'jumlah_modal',
+            'harga_modal',
+            'total_modal'
+        ]);
+        Modal::create([
+            'no_kwmdl' => request('no_kwmdl'),
+            'uraian_modal' => request('uraian_modal'),
+            'jumlah_modal' => request('jumlah_modal'),
+            'harga_modal' => request('harga_modal'),
+            'total_modal' => request('total_modal')
+        ]);
+        return redirect()->route('modal.index')->with('success', 'Data Berhasil Ditambah');
     }
 
     /**
@@ -59,7 +73,8 @@ class ModalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $modal = DB::table('modal')->where('id', $id)->get();
+        return view('modal/edit', ['modal' => $modal]); 
     }
 
     /**
@@ -69,7 +84,7 @@ class ModalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, modal $modal)
     {
         //
     }
@@ -80,8 +95,10 @@ class ModalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Modal $modal)
     {
-        //
+        $modal->delete();
+        return redirect()->route('modal.index')
+                        ->with('success', 'Klasifikasi deleted successfully');
     }
 }
