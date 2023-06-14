@@ -20,7 +20,7 @@ use App\Models\Modal;
     </div>
     <div class="mb-3">
         <label for="User Id" class="form-label">Harga Modal</label>
-        <input type="number" class="form-control" id="harga_modal" name="harga_mmodal">
+        <input type="number" class="form-control" id="harga_modal" name="harga_modal">
     </div>
     <div class="mb-3">
         <label for="Id Kegiatan" class="form-label">Total Modal</label>

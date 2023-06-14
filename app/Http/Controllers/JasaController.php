@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Jasa;
 use DB;
-use App\Models\Modal;
 
-class ModalController extends Controller
+class JasaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ModalController extends Controller
      */
     public function index(Request $request)
     {
-        $modal = Modal::all();
-        return view('modal/index', compact('modal'));
+        $jasa = Jasa::all();
+        return view('jasa/index', compact('jasa'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ModalController extends Controller
      */
     public function create()
     {
-        return view('modal/create');
+        return view('jasa/create');
     }
 
     /**
@@ -38,20 +38,20 @@ class ModalController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'no_kwmdl',
-            'uraian_modal',
-            'jumlah_modal',
-            'harga_modal',
-            'total_modal'
+            'no_kwjs',
+            'uraian_jasa',
+            'jumlah_jasa',
+            'harga_jasa',
+            'total_jasa'
         ]);
-        Modal::create([
-            'no_kwmdl' => request('no_kwmdl'),
-            'uraian_modal' => request('uraian_modal'),
-            'jumlah_modal' => request('jumlah_modal'),
-            'harga_modal' => request('harga_modal'),
-            'total_modal' => request('total_modal')
+        Jasa::create([
+            'no_kwjs' => request('no_kwjs'),
+            'uraian_jasa' => request('uraian_jasa'),
+            'jumlah_jasa' => request('jumlah_jasa'),
+            'harga_jasa' => request('harga_jasa'),
+            'total_jasa' => request('total_jasa')
         ]);
-        return redirect()->route('modal.index')->with('success', 'Data Berhasil Ditambah');
+        return redirect()->route('jasa.index')->with('success', 'Data Berhasil Ditambah');
     }
 
     /**
@@ -73,8 +73,8 @@ class ModalController extends Controller
      */
     public function edit($id)
     {
-        $modal = DB::table('modal')->where('id', $id)->get();
-        return view('modal/edit', ['modal' => $modal]); 
+        $jasa = DB::table('jasa')->where('id', $id)->get();
+        return view('jasa/edit', ['jasa' => $jasa]); 
     }
 
     /**
@@ -84,19 +84,19 @@ class ModalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, modal $modal)
+    public function update(Request $request, Jasa $jasa)
     {
         $request->validate([
             'id' => 'id',
-            'no_kwmdl' => 'required',
-            'uraian_modal' => 'required',
-            'jumlah_modal' => 'required',
-            'harga_modal' => 'required',
-            'total_modal' => 'required'
+            'no_kwjs' => 'required',
+            'uraian_jasa' => 'required',
+            'jumlah_jasa' => 'required',
+            'harga_jasa' => 'required',
+            'total_jasa' => 'required'
         ]);
-            $modal->update($request->all());
+            $jasa->update($request->all());
 
-            return redirect()->route('modal.index')->with('success', 'Klasifikasi updated successfully');
+            return redirect()->route('jasa.index')->with('success', 'Jasa updated successfully');
     }
 
     /**
@@ -105,10 +105,10 @@ class ModalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Modal $modal)
+    public function destroy(Jasa $jasa)
     {
-        $modal->delete();
-        return redirect()->route('modal.index')
+        $jasa->delete();
+        return redirect()->route('jasa.index')
                         ->with('success', 'Klasifikasi deleted successfully');
     }
 }

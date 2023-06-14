@@ -23,12 +23,12 @@
                     <tbody>
                         @foreach ($modal as $m)
                         <tr>
-                            <td>{{ $k->id }}</td>
-                            <td>{{ $k->no_kwmdl }}</td>
-                            <td>{{ $k->uraian_modal }}</td>
-                            <td>{{ $k->jumlah_modal }}</td>
-                            <td>{{ $k->harga_modal }}</td>
-                            <td>{{ $k->total_modal }}</td>
+                            <td>{{ $m->id }}</td>
+                            <td>{{ $m->no_kwmdl }}</td>
+                            <td>{{ $m->uraian_modal }}</td>
+                            <td>{{ $m->jumlah_modal }}</td>
+                            <td>{{ $m->harga_modal }}</td>
+                            <td>{{ $m->total_modal }}</td>
                             <td>
                                 <form action="{{ route('modal.destroy', $m->id) }}" method="POST">
                                     <a class="btn btn-primary" href="/modal/{{ $m->id }}/edit">Edit</a>

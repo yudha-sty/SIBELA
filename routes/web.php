@@ -5,6 +5,7 @@ use App\Http\Controllers\KlasifikasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ModalController;
+use App\Http\Controllers\JasaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('/', HomeController::class, '__invoke')->name('index');
 Route::resource('klasifikasi', KlasifikasiController::class);
 Route::resource('kegiatan', KegiatanController::class);
 Route::resource('modal', ModalController::class);
+Route::resource('jasa', JasaController::class);

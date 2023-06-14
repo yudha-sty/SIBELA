@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Modal extends Model
+class Jasa extends Model
 {
     use HasFactory;
 
-    protected $table = "modal";
-    
+    protected $table = "jasa";
+
     protected $fillable = [
-        'no_kwmdl',
-        'uraian_modal',
-        'jumlah_modal',
-        'harga_modal',
-        'total_modal'
+        'no_kwjs',
+        'uraian_jasa',
+        'jumlah_jasa',
+        'harga_jasa',
+        'total_jasa'
     ];
 }
