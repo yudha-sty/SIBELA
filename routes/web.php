@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\JasaController;
+use App\Http\Controllers\SppdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::resource('klasifikasi', KlasifikasiController::class);
 Route::resource('kegiatan', KegiatanController::class);
 Route::resource('modal', ModalController::class);
 Route::resource('jasa', JasaController::class);
+Route::resource('sppd', SppdController::class);

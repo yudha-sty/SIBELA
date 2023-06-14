@@ -30,6 +30,11 @@
                         class="hide-menu">Jasa
                     </span></a>
                 </li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/sppd".
+                    aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                        class="hide-menu">SPPD
+                    </span></a>
+                </li>
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat.html"
                         aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                             class="hide-menu">Chat</span></a></li>

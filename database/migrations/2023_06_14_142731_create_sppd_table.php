@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('sppd', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_sppd');
+            $table->string('no_kwsppd');
+            $table->string('uraian_sppd');
+            $table->string('kendaraan');
+            $table->string('harga_t');
+            $table->string('penginapan');
+            $table->string('harga_p');
+            $table->string('harian');
+            $table->string('representasi');
+            $table->string('hari');
+            $table->string('total');
             $table->timestamps();
         });
     }
