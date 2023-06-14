@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('ph', function (Blueprint $table) {
             $table->id();
+            $table->string('no_kwph');
+            $table->string('uraian_ph');
+            $table->string('jumlah_ph');
+            $table->string('harga_ph');
+            $table->string('total_ph');
             $table->timestamps();
         });
     }

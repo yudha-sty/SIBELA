@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Models\Pakai_Habis;
 
 class PhController extends Controller
 {
@@ -11,9 +13,10 @@ class PhController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $ph = Pakai_Habis::all();
+        return view('ph/index', compact('ph'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PhController extends Controller
      */
     public function create()
     {
-        //
+        return view('ph/create');
     }
 
     /**
@@ -34,7 +37,21 @@ class PhController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'no_kwph',
+            'uraian_ph',
+            'jumlah_ph',
+            'harga_ph',
+            'total_ph'
+        ]);
+        Pakai_Habis::create([
+            'no_kwph' => request('no_kwph'),
+            'uraian_ph' => request('uraian_ph'),
+            'jumlah_ph' => request('jumlah_ph'),
+            'harga_ph' => request('harga_ph'),
+            'total_ph' => request('total_ph')
+        ]);
+        return redirect()->route('ph.index')->with('success', 'Data Berhasil Ditambah');
     }
 
     /**
@@ -56,7 +73,8 @@ class PhController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ph= DB::table('ph')->where('id', $id)->get();
+        return view('ph/edit', ['ph' => $ph]); 
     }
 
     /**
@@ -66,9 +84,18 @@ class PhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pakai_Habis $ph)
     {
-        //
+        $request->validate([
+            'no_kwph' => 'required',
+            'uraian_ph' => 'required',
+            'jumlah_ph' => 'required',
+            'harga_ph' => 'required',
+            'total_ph' => 'required'
+        ]);
+            $ph->update($request->all());
+
+            return redirect()->route('ph.index')->with('success', 'PH updated successfully');
     }
 
     /**
@@ -77,8 +104,10 @@ class PhController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pakai_Habis $ph)
     {
-        //
+        $ph->delete();
+        return redirect()->route('ph.index')
+                        ->with('success', 'Sppd deleted successfully');
     }
 }
