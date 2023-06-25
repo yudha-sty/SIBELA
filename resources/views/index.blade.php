@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+{{-- 
 <div class="card-group">
     <div class="card border-right">
         <div class="card-body">
@@ -35,6 +35,7 @@
             </div>
         </div>
     </div>
+
     <div class="card border-right">
         <div class="card-body">
             <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -52,6 +53,7 @@
             </div>
         </div>
     </div>
+
     <div class="card">
         <div class="card-body">
             <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -255,6 +257,7 @@
                                 <i data-feather="bell"></i>
                             </a>
                         </div>
+
                         <div class="ml-3 mt-2">
                             <h5 class="text-dark font-weight-medium mb-2">Notification Pending Order!
                             </h5>
@@ -462,5 +465,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
