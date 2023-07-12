@@ -39,19 +39,19 @@
                     aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                         class="hide-menu">Klasifikasi </span></a>
                 <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                    <li class="sidebar-item"><a href="form-inputs.html" class="sidebar-link"><span
+                    <li class="sidebar-item"><a href="/sppd" class="sidebar-link"><span
                                 class="hide-menu"> SPPD
                             </span></a>
                     </li>
-                    <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                    <li class="sidebar-item"><a href="/ph" class="sidebar-link"><span
                                 class="hide-menu"> Pakai Habis
                             </span></a>
                     </li>
-                    <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                    <li class="sidebar-item"><a href="/jasa" class="sidebar-link"><span
                                 class="hide-menu"> Jasa
                             </span></a>
                     </li>
-                    <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                    <li class="sidebar-item"><a href="/modal" class="sidebar-link"><span
                                 class="hide-menu"> Modal
                             </span></a>
                     </li>

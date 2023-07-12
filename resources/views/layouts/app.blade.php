@@ -98,4 +98,7 @@
     <script src="{{ url('templates/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ url('templates/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
     <script src="{{ url('templates/dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+
+    <script src="{{ url('templates/dist/js/pages/chartjs/chartjs.init.js') }}"></script>
+    <script src="{{ url('templlates/assets/libs/chart.js/dist/Chart.min.js') }}"></script>
 </body>

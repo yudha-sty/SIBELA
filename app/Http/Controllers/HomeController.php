@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kegiatan;
+use App\Models\Jasa;
+use App\Models\Sppd;
+use App\Models\Modal;
+use App\Models\Pakai_Habis;
 
 class HomeController extends Controller
 {
@@ -13,7 +18,13 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        return view('index');
+        $kegiatan = Kegiatan::all();
+        $jasa = Jasa::all();
+        $sppd = Sppd::all();
+        $modal = Modal::all();
+        $ph = Pakai_Habis::all();
+        return view('index', compact('kegiatan','jasa','sppd','modal','ph'));
+        /* return view('index',['kegiatan' => $kegiatan ,'jasa' => $jasa, 'sppd' => $sppd, 'modal' => $modal]); */
     }
 
     /**
